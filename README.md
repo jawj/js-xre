@@ -6,7 +6,7 @@ Now available for TypeScript, where tagged template strings make them especially
 
     xRegExp`myregexp`('flags');
 
-And the flags `x` and `mm` are made available for extended and genuinely-multline, in addition to the standard flags (`i`, `g`, etc.) which are simply passed through.
+And the flags `x` and `mm` are made available for extended and genuinely-multiline, in addition to the standard flags (`i`, `g`, etc.) which are simply passed through.
 
 For example:
     
