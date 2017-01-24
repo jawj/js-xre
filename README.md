@@ -9,7 +9,9 @@ Now available for TypeScript, where tagged template strings make them especially
 And the flags `x` and `mm` are made available for extended and multline, in addition to the standard flags (`i`, `g`, etc.) which are simply passed through.
 
 For example:
-
+    
+    import {xRegExp} from 'xregexps';
+    
     const syncCodeRegExp = xRegExp`
       ^
       \s*
