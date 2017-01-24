@@ -51,7 +51,7 @@ function reassembleRE(literals: TemplateStringsArray, values: any[]): string {
 }
 
 export function xRegExp(literals: TemplateStringsArray, ... values) {
-  return (flags: string): RegExp => {
+  return (flags: string = ''): RegExp => {
     const x = flags.indexOf('x') != -1;
     const mm = flags.indexOf('mm') != -1;
     flags = flags.replace('x', '').replace('mm', 'm');
