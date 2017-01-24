@@ -10,7 +10,7 @@ And the flags `x` and `mm` are made available for extended and genuinely-multili
 
 For example:
     
-    import {xRegExp} from 'xregexps';
+    import xRegExp from 'xregexps';
     
     const syncCodeRegExp = xRegExp`
       ^
