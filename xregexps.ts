@@ -50,12 +50,11 @@ function reassembleRE(literals: TemplateStringsArray, values: any[]): string {
   return source;
 }
 
-export function xRegExp(literals: TemplateStringsArray, ... values) {
+export default function (literals: TemplateStringsArray, ... values) {
   return (flags: string = ''): RegExp => {
     const x = flags.indexOf('x') != -1;
     const mm = flags.indexOf('mm') != -1;
-    flags = flags.replace('x', '').replace('mm', 'm');
     const source = transpileRE(reassembleRE(literals, values), x, mm);
-    return new RegExp(source, flags);
+    return new RegExp(source, flags.replace('x', '').replace('mm', 'm'));
   }
 }
