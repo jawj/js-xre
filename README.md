@@ -1,4 +1,4 @@
-# JS-RegExp-Extended-MultiLine
+# /TypeScript extended RegExps/x
 
 Extended (and genuinely-multi-line) Regular Expressions for JavaScript. Details at http://blog.mackerron.com/2010/08/08/extended-multi-line-js-regexps/.
 
