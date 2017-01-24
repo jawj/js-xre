@@ -4,7 +4,7 @@ Extended (and genuinely-multi-line) Regular Expressions for JavaScript. Details 
 
 Now available for TypeScript, where tagged template strings make them especially usable. For example:
 
-    const syncCodeRegExp = new RegExp(xRE`
+    const syncCodeRegExp = xRegExp`
       ^
       \s*
       ([^.]+)      # code 1
@@ -18,7 +18,7 @@ Now available for TypeScript, where tagged template strings make them especially
       ([^.]{1,3})  # check digits
       \s*
       $
-    `, 'i');
+    `('xi');
     
     console.log(syncCodeRegExp);  // -> /^\s*([^.]+)[.]([^.]+)[.]([0-9]{6})[.]([0-9]{4})[.]([^.]{1,3})\s*$/i
     
