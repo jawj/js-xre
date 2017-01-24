@@ -1,4 +1,4 @@
-function compileRE(source: string, extended: boolean, multiline: boolean): string {
+function transpileRE(source: string, extended: boolean, multiline: boolean): string {
   if (! extended && ! multiline) return source;
   var convertedSource = '', len = source.length;
   var inCharClass = false, inComment = false, justBackslashed = false;
@@ -50,16 +50,12 @@ function reassembleRE(literals: TemplateStringsArray, values: any[]): string {
   return source;
 }
 
-export function xRE(literals: TemplateStringsArray, ... values) {
-  return compileRE(reassembleRE(literals, values), true, false);
+export function xRegExp(literals: TemplateStringsArray, ... values) {
+  return (flags: string): RegExp => {
+    const x = flags.indexOf('x') != -1;
+    const mm = flags.indexOf('mm') != -1;
+    flags = flags.replace('x', '').replace('mm', 'm');
+    const source = transpileRE(reassembleRE(literals, values), x, mm);
+    return new RegExp(source, flags);
+  }
 }
-
-export function mRE(literals: TemplateStringsArray, ... values) {
-  return compileRE(reassembleRE(literals, values), false, true);
-}
-
-export function mxRE(literals: TemplateStringsArray, ... values) {
-  return compileRE(reassembleRE(literals, values), true, true);
-}
-
-export const xmRE = mxRE;
