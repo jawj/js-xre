@@ -1,6 +1,6 @@
 # /TypeScript extended RegExps/x
 
-Provides extended (and genuinely-multi-line) Regular Expressions for JavaScript. 
+Provides extended (and genuinely-multi-line) Regular Expressions using tagged template strings. 
 
 Originally created for plain JavaScript — details at http://blog.mackerron.com/2010/08/08/extended-multi-line-js-regexps/.
 
