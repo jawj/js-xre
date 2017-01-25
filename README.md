@@ -2,9 +2,9 @@
 
 Provides extended (and genuinely-multi-line) Regular Expressions using tagged template strings. 
 
-Originally created for plain JavaScript — details at http://blog.mackerron.com/2010/08/08/extended-multi-line-js-regexps/.
+For an explanation of extended RegExps, see http://blog.mackerron.com/2010/08/08/extended-multi-line-js-regexps/ (this is from 2010, when this was just for plain JavaScript).
 
-Now available for TypeScript, where tagged template strings make them genuinely usable and useful. The general syntax is:
+Now available for TypeScript, where tagged template strings make this genuinely usable and useful. The general syntax is:
 
     xRegExp`myregexp`('flags');
 
