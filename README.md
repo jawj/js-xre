@@ -2,7 +2,7 @@
 
 Provides extended (and genuinely-multi-line) Regular Expressions using tagged template strings. 
 
-For an explanation of extended RegExps, see http://blog.mackerron.com/2010/08/08/extended-multi-line-js-regexps/ (this is from 2010, when this was just for plain JavaScript).
+For an **explanation of extended RegExps**, see http://blog.mackerron.com/2010/08/08/extended-multi-line-js-regexps/ (from 2010, when this was for plain JavaScript only).
 
 Now available for TypeScript, where tagged template strings make this genuinely usable and useful. The general syntax is:
 
