@@ -1,9 +1,10 @@
+
 function transpileRE(source: string, extended: boolean, multiline: boolean): string {
   if (! extended && ! multiline) return source;
-  var convertedSource = '', len = source.length;
-  var inCharClass = false, inComment = false, justBackslashed = false;
-  for (var i = 0; i < len; i ++) {
-    var c = source.charAt(i);
+  const len = source.length;
+  let convertedSource = '', inCharClass = false, inComment = false, justBackslashed = false;
+  for (let i = 0; i < len; i ++) {
+    let c = source.charAt(i);
     if (justBackslashed) {
       if (! inComment) convertedSource += c;
       justBackslashed = false;
@@ -41,20 +42,31 @@ function transpileRE(source: string, extended: boolean, multiline: boolean): str
   return convertedSource;
 }
 
-function reassembleRE(literals: TemplateStringsArray, values: any[]): string {
-  var source = '', rawLiterals = literals.raw, value: string;
-  for (var i = 0, len = rawLiterals.length; i < len; i ++) {
+function reassembleRE(literals: TemplateStringsArray, values: any[], escapeValues: boolean): string {
+  const rawLiterals = literals.raw
+  let source = '', value: string; 
+  for (let i = 0, len = rawLiterals.length; i < len; i ++) {
     source += rawLiterals[i];
-    if (value = values[i]) source += String(value);
+    if (value = values[i]) source += escapeValues ? xRegExp.escape(String(value)) : String(value);
   }
   return source;
 }
 
-export default function (literals: TemplateStringsArray, ... values) {
+export function xRegExp(literals: TemplateStringsArray, ... values) {
   return (flags: string = ''): RegExp => {
     const x = flags.indexOf('x') != -1;
     const mm = flags.indexOf('mm') != -1;
-    const source = transpileRE(reassembleRE(literals, values), x, mm);
-    return new RegExp(source, flags.replace('x', '').replace('mm', 'm'));
+    const escapeValues = flags.indexOf('\\') != -1;
+    const source = transpileRE(reassembleRE(literals, values, escapeValues), x, mm);
+    const nativeFlags = flags.replace(/x|\\/g, '').replace('mm', 'm');
+    return new RegExp(source, nativeFlags);
   }
 }
+
+export namespace xRegExp {
+  export function escape(source: string): string {
+    return source.replace(/[-\/\\^$.*+?()[\]{}|]/g, '\\$&');
+  }
+}
+
+export default xRegExp;
