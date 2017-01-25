@@ -8,7 +8,7 @@ Now available for TypeScript, where tagged template strings make them genuinely 
 
     xRegExp`myregexp`('flags');
 
-In addition to the standard flags (`i`, `g`, etc.), which are simply passed through to the native RegExp, three additional flags are provided:
+In addition to the standard flags (`i`, `g`, etc.), which are simply passed through to the native `RegExp`, three additional flags are provided:
 
 * `x` activates extended mode, stripping out whitespace and comments
 * `mm` activates genuinely-multi-line mode, where `.` matches anything, including newlines (achieved by replacing `.` with `[\s\S]`)
