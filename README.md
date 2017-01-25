@@ -28,7 +28,7 @@ An example with flag `x`:
       $
     `('xi');
     
-    console.log(codeRegExp);  // -> /^\s*([0-9]+)\.([0-9]+)\s*$/i
+    console.log(codeRegExp);  // -> /^\s*([0-9]+)\.([a-z]+)\s*$/i
     
 An example with flag `\\`:
 
@@ -47,7 +47,7 @@ An example with flag `\\`:
       $
     `('\\xi');
     
-    console.log(codeRegExp);  // -> /^\s*([0-9]+)\.([0-9]+)\.([0-9]+)\s*$/i
+    console.log(codeRegExp);  // -> /^\s*([0-9]+)\.([a-z]+)\.([0-9]+)\s*$/i
     
 The same example *without* flag `\\` (and importing the template function under a briefer name):
 
@@ -66,6 +66,6 @@ The same example *without* flag `\\` (and importing the template function under 
       $
     `('xi');
     
-    console.log(codeRegExp);  // -> /^\s*([0-9]+)\.([0-9]+)\.([0-9]+)\s*$/i
+    console.log(codeRegExp);  // -> /^\s*([0-9]+)\.([a-z]+)\.([0-9]+)\s*$/i
     
     
