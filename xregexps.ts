@@ -1,4 +1,8 @@
 
+// https://github.com/jawj/TypeScript-extended-RegExps/
+// Copyright (C) George MacKerron 2010 - 2017
+// MIT licenced
+
 function transpileRE(source: string, extended: boolean, multiline: boolean): string {
   if (! extended && ! multiline) return source;
   const len = source.length;
