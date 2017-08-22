@@ -1,15 +1,15 @@
 {
-  "name": "xre",
+  "name": "js-xre",
   "version": "0.1.0",
   "description": "Extended (and genuinely-multi-line) Regular Expressions in JavaScript using ES2015+ tagged template strings. ",
-  "main": "xre.js",
+  "main": "js-xre.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "update-docs": "NODE_PATH=$NODE_PATH:. ./README.process.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jawj/xre.git"
+    "url": "git+https://github.com/jawj/js-xre.git"
   },
   "keywords": [
     "regular",
@@ -20,9 +20,9 @@
   "author": "George MacKerron",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jawj/xre/issues"
+    "url": "https://github.com/jawj/js-xre/issues"
   },
-  "homepage": "https://github.com/jawj/xre",
+  "homepage": "https://github.com/jawj/js-xre",
   "devDependencies": {
     "intercept-stdout": "^0.1.2"
   }

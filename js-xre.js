@@ -1,9 +1,9 @@
-// https://github.com/jawj/xre
+// https://github.com/jawj/js-xre
 // Copyright (C) George MacKerron 2010 - 2017
 // MIT licenced
 
 const xRE = (function () {
-  
+
   function xRE(literals, ...values) {  // tag function that returns a tag function
     return (flagLiterals, ...flagValues) => {
       const flags = reassembleTemplate(flagLiterals, flagValues);

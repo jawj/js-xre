@@ -69,7 +69,7 @@ This library is small and focused. It's < 1KB gzipped, compared to XRegExp's 62 
 An simple example with the extended flag `x`:
 
 ```js
-const xRE = require('xre');
+const xRE = require('js-xre');
 
 const digitsThatNeedSeparators = xRE `
   \d          # a digit
@@ -92,7 +92,7 @@ console.log(separate000s(1234567));
 And a monstrously complex example: [Daring Fireball's URL RegExp](http://daringfireball.net/2010/07/improved_regex_for_matching_urls):
 
 ```js 
-const xRE = require('xre');
+const xRE = require('js-xre');
 
 const url = xRE `
   \b
@@ -133,7 +133,7 @@ console.log('Please visit http://mackerron.com.'.replace(url, '<a href="$&">$&</
 Serious HTML wrangling should be done with XPath or similar, of course. But:
 
 ```js
-const xRE = require('xre');
+const xRE = require('js-xre');
 
 const html = `
   <p>A paragraph on one line.</p>
@@ -163,7 +163,7 @@ Since our syntax for extended regular expressions uses template strings, you can
 For example, say you're allowing users to type in something to find all matches:
 
 ```js
-const xRE = require('xre');
+const xRE = require('js-xre');
 
 const searchText = '12.6';  // this might come from an <input> field
 const search = xRE `^${searchText}$` `bg`;
@@ -175,7 +175,7 @@ console.log(search);
 The alternative (useful if you want to mix-and-match your escaping for any reason) is to use the `escape` method of the main function:
 
 ```js
-const xRE = require('xre');
+const xRE = require('js-xre');
 
 const searchText = '12.6';  // might come from an <input type="text" />
 const anchorStart = true;   // might come from an <input type="checkbox" />
@@ -198,7 +198,7 @@ console.log(search);
 For instance:
 
 ```javascript
-// earlier: <script src="xre.js"></script>
+// earlier: <script src="js-xre.js"></script>
 
 const make = (tag) => document.body.appendChild(document.createElement(tag));
 const source = make('textarea');
