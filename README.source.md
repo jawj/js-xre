@@ -80,13 +80,13 @@ const digitsThatNeedSeparators = xRE `
 ` `xg`;
 
 console.log(digitsThatNeedSeparators);  
-// /\d(?=(\d{3})+\b)/g
+/**/
 
 const separate000s = (n, sep = '\u202f') =>
   String(n).replace(digitsThatNeedSeparators, '$&' + sep);
 
 console.log(separate000s(1234567));
-// 1 234 567
+/**/
 ```
 
 And a monstrously complex example: [Daring Fireball's URL RegExp](http://daringfireball.net/2010/07/improved_regex_for_matching_urls):
@@ -122,10 +122,10 @@ const url = xRE `
 ` `xig`;
 
 console.log(url); 
-// /\b(?:[a-z][\w-]+:(?:\/{1,3}|[a-z0-9%])|www\d{0,3}[.]|[a-z0-9.\-]+[.][a-z]{2,4}\/)(?:[^\s()<>]+|\(([^\s()<>]+|(\([^\s()<>]+\)))*\))+(?:\(([^\s()<>]+|(\([^\s()<>]+\)))*\)|[^\s\`!()\[\]{};:'".,<>?«»“”‘’])/gi
+/**/
 
 console.log('Please visit http://mackerron.com.'.replace(url, '<a href="$&">$&</a>'));  
-// Please visit <a href="http://mackerron.com">http://mackerron.com</a>.
+/**/
 ```
     
 ### `mm` for massively multiline
@@ -143,18 +143,17 @@ const html = `
 
 const mPara  = xRE `<p\b.+?</p>` `mg`;
 console.log(mPara);
-// /<p\b.+?<\/p>/gm
+/**/
 
 console.log(html.match(mPara));
-// [ '<p>A paragraph on one line.</p>' ]
+/**/
 
 const mmPara = xRE `<p\b.+?</p>` `mmg`;  // note: mm
 console.log(mmPara);
-// /<p\b[\s\S]+?<\/p>/gm
+/**/
 
 console.log(html.match(mmPara));
-// [ '<p>A paragraph on one line.</p>',
-//   '<p>A paragraph which, by contrast,\n  spans multiple lines.</p>' ]
+/**/
 ```
 
 ### `b` for backslashes
@@ -170,7 +169,7 @@ const searchText = '12.6';  // this might come from an <input> field
 const search = xRE `^${searchText}$` `bg`;
 
 console.log(search);
-// /^12\.6$/g
+/**/
 ```
 
 The alternative (useful if you want to mix-and-match your escaping for any reason) is to use the `escape` method of the main function:
@@ -189,7 +188,7 @@ const search = xRE `
 ` `gx`;
 
 console.log(search);
-// /^12\.6/g
+/**/
 ```
 
 ## Being less literal
