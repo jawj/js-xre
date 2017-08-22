@@ -2,6 +2,16 @@
 
 Extended (and genuinely-multi-line) Regular Expressions in JavaScript using ES2015+ tagged template strings. 
 
+## Installation
+
+For browser-side use:
+
+`<script src="js-xre.js"></script>`. 
+
+For use with node:
+
+`npm install js-xre`.
+
 ## What's an extended RegExp?
 
 Perl, Ruby, and some other languages support a readable _extended_ regular expression syntax, in which literal whitespace is ignored and comments (starting with `#`) are available. This is triggered with the `x` flag.
@@ -55,7 +65,7 @@ In addition to the standard flags (`i`, `g`, `m`, `y`, `u`), which are passed st
 * `mm` activates genuinely-multi-line mode, where `.` matches anything, including newlines (achieved by replacing `.` with `[\s\S]`)
 * `b` is for backslashes, and automatically escapes all template expressions so they are treated as literal text (alternatively, an `xRE.escape` method is provided so this can be done case-by-case).
 
-### Alternatives
+## Alternatives
 
 You should also check out [XRegExp](http://xregexp.com/), an impressive library that takes a rather more and-the-kitchen-sink approach.
 
@@ -192,7 +202,7 @@ console.log(search);
 // /^12\.6/g
 ```
 
-## Being less literal
+## Use as a regular function
 
 `xRE` can also be called as a regular (non-tagged-template) function. This could be useful if you wanted to create an extended regular expression based on user input in a `<textarea>`, say.
 
