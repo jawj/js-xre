@@ -1,16 +1,30 @@
 # xRE: extended RegExps for JavaScript ES2015+
 
-Extended (and genuinely-multi-line) Regular Expressions in JavaScript using ES2015+ tagged template strings. 
+Extended Regular Expressions in JavaScript using, ES2015+ tagged template literals.
 
-## Installation
+Small: < 1 KB gzipped. Focused: it doesn't do a lot else (disclosure: it does do properly multiline expressions too). And forward-looking (which is a nice way of saying you'll need a recent node version or modern browser to enjoy it). 
 
-For browser-side use:
+## Installation and use
 
-`<script src="js-xre.js"></script>`. 
+### Browser
 
-For use with node:
+```html
+<script src="js-xre.js"></script>
+<script>
+  const myRegExp = xRE `^\d$ # just one digit` `x`;
+</script>
+```
 
-`npm install js-xre`.
+### Node
+
+`npm install js-xre`
+
+then
+
+```javascript
+  const xRE = require('js-xre');
+  const myRegExp = xRE `^\d$ # just one digit` `x`;
+```
 
 ## What's an extended RegExp?
 
@@ -53,11 +67,11 @@ ES2015's pleasingly flexible [tagged template literals](https://developer.mozill
 
 As implemented here, the syntax is:
 
-```
+```javascript
 xRE `myregexp` `flags`
 ```
 
-(Note: the `flags` literal is required — to specify no flags, use an empty literal, ``` `` ```).
+(Note: the `flags` argument is required — to specify no flags, use an empty literal, ``` `` ```).
 
 In addition to the standard flags (`i`, `g`, `m`, `y`, `u`), which are passed straight through to the native `RegExp`, three additional flags are provided:
 
@@ -67,9 +81,7 @@ In addition to the standard flags (`i`, `g`, `m`, `y`, `u`), which are passed st
 
 ## Alternatives
 
-You should also check out [XRegExp](http://xregexp.com/), an impressive library that takes a rather more and-the-kitchen-sink approach.
-
-This library is small and focused. It's < 1KB gzipped, compared to XRegExp's 62 KB.
+You should also check out [XRegExp](http://xregexp.com/), an impressive library that takes a rather more and-the-kitchen-sink approach. The complete version of XRegExp is 62 KB gzipped, against this library's few hundred bytes.
 
 
 ## Examples
@@ -202,7 +214,7 @@ console.log(search);
 // /^12\.6/g
 ```
 
-## Use as a regular function
+## Usage as a regular function
 
 `xRE` can also be called as a regular (non-tagged-template) function. This could be useful if you wanted to create an extended regular expression based on user input in a `<textarea>`, say.
 
