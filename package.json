@@ -1,6 +1,6 @@
 {
   "name": "js-xre",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Extended (and genuinely-multi-line) Regular Expressions in JavaScript using ES2015+ tagged template strings. ",
   "main": "js-xre.js",
   "scripts": {
