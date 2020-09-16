@@ -34,19 +34,20 @@ Perl, Ruby, and some other languages support a readable _extended_ regular expre
 
 For example, as far as Ruby is concerned,
 
-```
+```regexp
 /\d(?=(\d{3})+\b)/
 ```
 
 and
 
-```
-/ \d          # a digit
+```regexp
+/(?x)
+  \d          # a digit
   (?=         # followed by (look-ahead match)
     (\d{3})+  # one or more sets of three digits
     \b        # and then a word boundary
   )
-/x
+/
 ```
 
 are equivalent. For humans, however, the extended second version is obviously much easier to get to grips with.
